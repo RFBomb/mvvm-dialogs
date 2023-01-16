@@ -9,15 +9,17 @@
      -->
     <TargetFrameworks>net472;netcoreapp3.1;net5.0-windows</TargetFrameworks>
     <AssemblyTitle>MVVM Dialogs</AssemblyTitle>
-    <PackageId>MvvmDialogs_.NetCore_.Net5</PackageId>
+    <PackageId>MvvmDialogs_.NetCore</PackageId>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\StrongName.snk</AssemblyOriginatorKeyFile>
     <UseWpf>true</UseWpf>
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
-    
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/RFBomb/mvvm-dialogs</RepositoryUrl>
+    <GeneratePackageOnBuild Condition="$(Configuration)=='Release'">true</GeneratePackageOnBuild>
     
     <Description>This is a fork of the official repo that retains support for .NetCoreApp3.1 and .Net5.0 application. 
 The official repo deprecated .Net5.0 and .NetCoreApp3.1 in August 2022 when upgrading to v9.1.0, in favor of .Net6.0 (several months prior to their official EOL). 
@@ -27,6 +29,15 @@ Release version info will have parity with the official releases ( v9.1.0 offici
   <ItemGroup>
     <None Include="..\StrongName.snk">
       <Link>StrongName.snk</Link>
+    </None>
+    <None Include="..\LICENSE">
+      <Link>LICENSE</Link>
+      <PackagePath></PackagePath>
+      <Pack>true</Pack>
+    </None>
+    <None Include="Readme.md">
+      <PackagePath></PackagePath>
+      <Pack>true</Pack>
     </None>
   </ItemGroup>
 
